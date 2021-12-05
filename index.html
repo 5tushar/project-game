@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Game</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/style.css" rel="Stylesheet" type="text/css" />
-    </head>
 
-    <body>
-        <header>
-            <div class="flex">
-                <div class="logo">
+<head>
+    <title>Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="Stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="index-modal-close" class="close">&times;</span>
+
+            <div>
+                <div class="">
+                    <p>Congratulations!!.. You are our <span id="customer-num"
+                            style="color: brown; font-weight: bold;"></span>
+                        customer!</p>
                 </div>
-                <nav>
-                    <button id="nav-toggle" class="hamburger-menu">
-                        <span class="strip"></span>
-                        <span class="strip"></span>
-                        <span class="strip"></span>
-                    </button>
-                    <ul id="nav-menu-container">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="games.html">Games</a></li>
-                        <li><a href="aboutUs.html">About Us</a></li>
-                        <!-- <li><a href="game-4.html">Contact</a></li> -->
-                    </ul>
-                </nav>
-                <a href="login.html" id="login-register-button">Login / Register</a>
+                <div class="">
+                    <h5>Quote Of the Day!</h5>
+                </div>
+                <div class="">
+                    <h6 id="famous-quotes">wait..</h6>
+                </div>
             </div>
-        </header>
+        </div>
 
-        <main>
-            <section id="index-page">
-                <div class="index-page-text">
-                    <h1>The Best <span>Games</span> Out There</h1>
-                    <h5 style="color: black;">Get access to the best games out there. Use our portal to get premium subscriptions for premium games in the market. </h5>
-                    <button id="read-more">Know More</button>
-                </div>
-            </section>
-        </main>
+    </div>
+    <header>
+        <div class="flex">
+            <div class="logo">
+            </div>
+            <nav>
+                <button id="nav-toggle" class="hamburger-menu">
+                    <span class="strip"></span>
+                    <span class="strip"></span>
+                    <span class="strip"></span>
+                </button>
+                <ul id="nav-menu-container">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="games.html">Games</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <!-- <li><a href="game-4.html">Contact</a></li> -->
+                </ul>
+            </nav>
+            <a href="login.html" id="login-register-button">Login / Register</a>
+        </div>
+    </header>
 
-        <footer>
-            <div class="flex">
+    <main>
+        <section id="index-page">
+            <div class="index-page-text">
+                <h1>The Best <span>Games</span> Out There</h1>
+                <h5 style="color: black;">Get access to the best games out there. Use our portal to get premium
+                    subscriptions for premium games in the market. </h5>
+                <button id="read-more">Know More</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="flex">
+            <div class="box">
                 <ul>
                     <li>
                         <a href="index.html">Home</a>
@@ -54,7 +80,17 @@
                     </li>
                 </ul>
             </div>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
+            <div class="box">
+                <a href="https://www.facebook.com/FacebookGaming/" target="_blanks" class="fa fa-facebook"></a>
+                <a href="https://twitter.com/twittergaming?lang=en" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.youtube.com/gaming/live" target="_blank" class="fa fa-youtube"></a>
+                <a href="https://www.instagram.com/totalgaming_official/?hl=en" target="_blank"
+                    class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
 </html>

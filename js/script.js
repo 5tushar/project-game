@@ -31,3 +31,35 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     navMenu.style.display = navMenu.offsetParent === null ? 'block' : 'none';
 });
 
+let random = Math.random();
+
+var modal = document.getElementById("myModal");
+modal.style.display = "block";
+
+const customerNum = document.getElementById("customer-num");
+for (var x = 0; x < 12700 * random; x++) {
+    customerNum.innerText = x;
+    setTimeout(500);
+}
+
+
+const famousQuoteHolder = document.getElementById("famous-quotes");
+axios.get("https://quotes.rest/qod?language=en").then(response => {
+    famousQuoteHolder.innerText = response.data.contents.quotes[0].quote + " By " + response.data.contents.quotes[0].author;
+}).catch(error => {
+    famousQuoteHolder.innerText = "If nothing goes right.... Go left.. :D";
+})
+
+var closeModal = document.getElementById("index-modal-close");
+closeModal.onclick = function () {
+    modal.style.display = "none";
+    alert("Visit games page for latest updates.");
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        alert("Visit games page for latest updates.");
+    }
+}
