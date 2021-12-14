@@ -38,13 +38,21 @@ var modal = document.getElementById("myModal");
 if (modal) {
     modal.style.display = "block";
 
-
     const customerNum = document.getElementById("customer-num");
-    for (var x = 0; x < 12700 * random; x++) {
-        customerNum.innerText = x;
-        setTimeout(500);
-    }
+    animateValue(customerNum, 10000, 12700 * random, 2000);
 
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
 
     const famousQuoteHolder = document.getElementById("famous-quotes");
     axios.get("https://quotes.rest/qod?language=en").then(response => {
