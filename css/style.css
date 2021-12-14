@@ -629,7 +629,7 @@ img.thumbnail{
   }
   
   /* The Modal (background) */
-  .modal {
+  .modal-gallery {
     display: none;
     position: fixed;
     z-index: 1;
