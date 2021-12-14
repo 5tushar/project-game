@@ -22,7 +22,7 @@ function startCounting() {
 
 if (document.getElementById('read-more')) {
     document.getElementById('read-more').addEventListener('click', function () {
-        location.replace('games.html');
+        location.replace('html/games.html');
     });
 }
 
@@ -31,16 +31,16 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     navMenu.style.display = navMenu.offsetParent === null ? 'block' : 'none';
 });
 
-let random = Math.random();
-
 var modal = document.getElementById("myModal");
 
 if (modal) {
     modal.style.display = "block";
 
     const customerNum = document.getElementById("customer-num");
-    animateValue(customerNum, 10000, 12700 * random, 2000);
-
+    if (customerNum) {
+        customerNum.innerHTML = 0;
+        animateValue(customerNum, 10000, 12700 * Math.random(), 2000);
+    }
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
         const step = (timestamp) => {
